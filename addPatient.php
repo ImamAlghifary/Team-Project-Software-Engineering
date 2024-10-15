@@ -59,6 +59,30 @@
     </style>
 </head>
 <body>
+    <?php
+        if(isset($_POST['Submit'])) {
+            include_once("config.php");
+            
+            $Patient_ID = mysqli_real_escape_string($conn, $_POST['ID']);
+            $First_Name = mysqli_real_escape_string($conn, $_POST['fname']);
+            $Last_Name = mysqli_real_escape_string($conn, $_POST['lname']);
+            $Email = mysqli_real_escape_string($conn, $_POST['email']);
+            $Phone = mysqli_real_escape_string($conn, $_POST['phone']);
+            $Address = mysqli_real_escape_string($conn, $_POST['address']);
+            $Date_Of_Birth = mysqli_real_escape_string($conn, $_POST['Date_of_Birth']);
+
+            $result = mysqli_query($conn,"INSERT INTO Patient(Patient_ID, First_Name, Last_Name, Email, Phone, Address, Date_Of_Birth)
+            VALUES ('$Patient_ID', '$First_Name', '$Last_Name', '$Email', '$Phone', '$Address', '$Date_Of_Birth')");
+
+            if ($result) {
+                echo "Patient added successfully. <a href='/Hospital_Management/patientview.php'>View Patient</a><br>";
+            } else {
+                echo "Error: " . mysqli_error($conn);
+            }
+
+            mysqli_close($conn);
+        }
+    ?>
     <div class="container">
         <h2>Add Patient</h2>
         <form action="" method="post" name="form1">
