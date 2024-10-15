@@ -61,6 +61,29 @@
 <body>
     <div class="container">
         <h2>Add Doctor</h2>
+        <?php
+        if(isset($_POST['Submit'])) {
+            $Doctor_ID = $_POST['ID'];
+            $First_Name = $_POST['fname'];
+            $Last_Name = $_POST['lname'];
+            $Specialization = $_POST['specialization'];
+            $Email = $_POST['email'];
+            $Phone = $_POST['phone'];
+          
+            include_once("config.php");
+
+            $result = mysqli_query($conn,"INSERT INTO Doctor(Doctor_ID, First_Name, Last_Name, Specialization, Email, Phone)
+            VALUES ('$Doctor_ID', '$First_Name', '$Last_Name', '$Specialization', '$Email', '$Phone')");
+
+            if ($result) {
+                echo "Doctor added successfully. <a href='/Hospital_Management/doctorview.php'>View Doctor</a><br>";
+            } else {
+                echo "Error: " . mysqli_error($conn);
+            }
+
+            mysqli_close($conn);
+        }
+        ?>
         <form action="doctoradd.php" method="post" name="form1">
             <table>
                 <tr>
