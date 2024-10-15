@@ -61,6 +61,30 @@
 <body>
     <div class="container">
         <h2>Add Appointment</h2>
+        <?php
+        if(isset($_POST['Submit'])) {
+            $Appointment_ID = $_POST['ID'];
+            $Patient_ID = $_POST['patient_id'];
+            $Doctor_ID = $_POST['doctor_id'];
+            $Date= $_POST['date'];
+            $Time = $_POST['time'];
+            
+
+          
+            include_once("config.php");
+
+            $result = mysqli_query($conn,"INSERT INTO Appointment(Appointment_ID, Patient_ID, Doctor_ID, Date, Time)
+            VALUES ('$Appointment_ID', '$Patient_ID', '$Doctor_ID', '$Date', '$Time')");
+
+            if ($result) {
+                echo "Appointment added successfully. <a href='/Hospital_Management/appointmentview.php'>View Appointment</a><br>";
+            } else {
+                echo "Error: " . mysqli_error($conn);
+            }
+
+            mysqli_close($conn);
+        }
+        ?>
         <form action="appointmentmake.php" method="post" name="form1">
             <table>
                 <tr>
