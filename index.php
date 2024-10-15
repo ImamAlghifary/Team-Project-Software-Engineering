@@ -17,11 +17,9 @@
 	</header>
 	<nav>
 		<ul>
-			<li><a href="/Hospital_Management/patientadd.php">Add Patient</a></li>
-			<li><a href="/Hospital_Management/doctoradd.php">Add Doctor</a></li>
-			<li><a href="/Hospital_Management/prescriptionadd.php">Add Prescription</a></li>
-			<li><a href="/Hospital_Management/medicalrecordadd.php">Add Medical Record</a></li>
-			<li><a href="/Hospital_Management/appointmentmake.php">Make Appointment</a></li>
+			<li><a href="addPatient.php">Add Patient</a></li>
+			<li><a href="addDoctor.php">Add Doctor</a></li>
+			<li><a href="appointmentmake.php">Make Appointment</a></li>
 			
 		</ul>
 	</nav>
