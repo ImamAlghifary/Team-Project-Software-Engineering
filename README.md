@@ -5,5 +5,5 @@ This project is part of our collaborative group assignment aimed at practicing G
 ## Team Members
 - **Muhammad Imam Alghifary** (GitHub: @ImamAlghifary): Work with index.php, config.php and addPatient.php
 - **Richly Harald Januar** (GitHub: @lala1105): Work with addDoctor.php
-- **Fiona Latisha Longkutoy** (GitHub: @username3): Work with appointmentmake.php
+- **Fiona Latisha Longkutoy** (GitHub: @Richjan2801): Work with appointmentmake.php
 
